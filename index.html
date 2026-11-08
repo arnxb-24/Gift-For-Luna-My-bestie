@@ -10,14 +10,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 :root{--ink:#493c43;--rose:#d78694;--pink:#f7e2e3;--cream:#fffaf4;--sage:#82977b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff9f5;color:var(--ink);font-family:'DM Sans',sans-serif}
 
-/* Multi-step Cover Screen Styles */
-#entry-cover{position:fixed;inset:0;background:#fff9f5;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;transition:opacity 0.5s ease, visibility 0.5s ease}
+/* Centered Multi-step Cover Screen Styles */
+#entry-cover{position:fixed;inset:0;background:#fff9f5;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity 0.5s ease, visibility 0.5s ease}
 #entry-cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.cover-card{background:#fff;border:1px solid #f1e6e1;padding:40px 30px;border-radius:24px;box-shadow:0 15px 35px #8f60630f;max-width:440px;width:100%;display:none}
+.cover-card{background:#fff;border:1px solid #f1e6e1;padding:40px 30px;border-radius:24px;box-shadow:0 15px 35px #8f60630f;max-width:440px;width:100%;text-align:center;display:none}
 .cover-card.active{display:block}
-.cover-card h2{font-family:'Playfair Display',serif;font-size:26px;color:#5a454d;margin-top:0;margin-bottom:24px}
+.cover-card h2{font-family:'Playfair Display',serif;font-size:24px;color:#5a454d;margin-top:0;margin-bottom:24px;line-height:1.4}
 .cover-buttons{display:flex;flex-direction:column;gap:12px}
-.cover-btn{background:#cf8792;color:#fff;border:none;padding:12px 20px;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,background .2s;box-shadow:0 5px 15px #cd87922b}
+.cover-btn{background:#cf8792;color:#fff;border:none;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:transform .2s,background .2s;box-shadow:0 5px 15px #cd87922b;text-align:center}
 .cover-btn:hover{transform:translateY(-2px);background:#bd7481}
 .cover-btn.secondary{background:#f5e2e3;color:#80656a;box-shadow:none}
 .cover-btn.secondary:hover{background:#ecd3d1}
@@ -27,7 +27,7 @@
 </head>
 <body>
 
-  <!-- Multi-step Entry Cover Screen -->
+  <!-- Perfectly Centered Multi-step Cover Screen -->
   <div id="entry-cover">
     <!-- Step 1: Bestie Question -->
     <div class="cover-card active" id="step-1">
@@ -157,3 +157,31 @@
     const sx = parseFloat(spot.style.left);
     const sy = parseFloat(spot.style.top);
     if (Math.hypot(x - sx, y - sy) < 9.5) {
+      revealed = true;
+      spot.classList.add('found');
+      spot.setAttribute('aria-label', 'Surprise found!');
+      message.hidden = false;
+      hint.textContent = 'You found it! A little something, just for you ♡';
+      cover.disabled = true;
+      message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      spot.classList.add('show');
+      hint.textContent = 'Getting warmer... keep looking around the picture ✨';
+      window.setTimeout(() => spot.classList.remove('show'), 900);
+    }
+  });
+
+  spot.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (revealed) return;
+    revealed = true;
+    spot.classList.add('found');
+    message.hidden = false;
+    hint.textContent = 'You found it! A little something, just for you ♡';
+    cover.disabled = true;
+    message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+  </script>
+</body>
+</html>
