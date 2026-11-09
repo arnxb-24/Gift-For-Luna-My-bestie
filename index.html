@@ -4,8 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d0406">
-  <meta name="description" content="A little bunny-filled friendship anniversary surprise for Bestie Luna.">
-  <title>Gift for Bestie Luna 🐇</title>
+  <meta name="description" content="A little dark friendship anniversary surprise for Bestie Luna.">
+  <title>Gift for Bestie Luna 💔</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 
@@ -173,7 +173,15 @@ body{
   background:radial-gradient(ellipse at 52% 45%,#3a0a10 0%,#240408 48%,#120103 100%);
   box-shadow: 0 0 30px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(0,0,0,0.8);
 }
-.iuno-portrait{height:100%;width:100%;object-fit:cover;object-position:center 27%}
+/* Enhanced Image Quality Fixes */
+.iuno-portrait{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:center 27%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
 .frame-moon,.frame-bunny{
   position:absolute;
   z-index:2;
@@ -249,25 +257,28 @@ body{
 .s1{top:26%;left:37%}
 .s2{top:20%;right:18%}
 .s3{top:37%;left:23%}
-.hunt-bunny{position:absolute;z-index:2;left:50%;top:38%;width:146px;height:190px;transform:translateX(-50%)}
-.ear{position:absolute;width:36px;height:95px;top:0;border-radius:50%;background:#24060b;border:2px solid #571019}
-.e1{left:29px;transform:rotate(-13deg)}
-.e2{right:29px;transform:rotate(13deg)}
-.ear:after{content:'';position:absolute;inset:12px 9px;border-radius:50%;background:#8b0000}
-.bunny-face{position:absolute;left:25px;top:56px;width:96px;height:85px;background:#24060b;border:2px solid #571019;border-radius:48% 48% 45% 45%;z-index:2}
-.bunny-face i{position:absolute;top:34px;width:6px;height:8px;background:#ff4d5a;border-radius:50%;box-shadow: 0 0 5px #ff4d5a}
-.bunny-face i:first-child{left:26px}
-.bunny-face i:nth-child(2){right:26px}
-.bunny-face b{position:absolute;top:48px;left:45px;width:9px;height:7px;border-radius:50%;background:#e63946}
-.bunny-face u{position:absolute;left:34px;top:57px;width:29px;height:8px;border-bottom:2px solid #ff808b;border-radius:50%;text-decoration:none}
-.bunny-body{position:absolute;bottom:0;left:20px;width:106px;height:99px;border-radius:50% 50% 42% 42%;background:#24060b;border:2px solid #571019}
-.bunny-tail{position:absolute;z-index:3;bottom:24px;left:7px;width:34px;height:34px;border-radius:50%;background:#24060b;border:2px solid #571019}
+
+/* Dead Bunny Styles */
+.hunt-bunny{position:absolute;z-index:2;left:50%;top:38%;width:146px;height:190px;transform:translateX(-50%); opacity: 0.75; filter: grayscale(30%);}
+.ear{position:absolute;width:36px;height:95px;top:0;border-radius:50%;background:#1b0508;border:2px solid #571019}
+.e1{left:29px;transform:rotate(-35deg); top: 10px;}
+.e2{right:29px;transform:rotate(25deg)}
+.ear:after{content:'';position:absolute;inset:12px 9px;border-radius:50%;background:#4a0404}
+.bunny-face{position:absolute;left:25px;top:56px;width:96px;height:85px;background:#1b0508;border:2px solid #571019;border-radius:48% 48% 45% 45%;z-index:2}
+.bunny-face i{position:absolute;top:34px;width:8px;height:2px;background:#ff4d5a;border-radius:0%;box-shadow: 0 0 5px #ff4d5a; transform: rotate(45deg);}
+.bunny-face i:first-child{left:24px; transform: rotate(-45deg);}
+.bunny-face i:nth-child(2){right:24px; transform: rotate(45deg);}
+.bunny-face b{position:absolute;top:48px;left:45px;width:9px;height:7px;border-radius:50%;background:#571019}
+.bunny-face u{position:absolute;left:34px;top:57px;width:29px;height:8px;border-top:2px solid #ff4d5a;border-bottom:none;border-radius:50%;text-decoration:none}
+.bunny-body{position:absolute;bottom:0;left:20px;width:106px;height:99px;border-radius:50% 50% 42% 42%;background:#1b0508;border:2px solid #571019}
+.bunny-tail{position:absolute;z-index:3;bottom:24px;left:7px;width:34px;height:34px;border-radius:50%;background:#1b0508;border:2px solid #571019}
+
 .search-hint{position:absolute;bottom:7%;left:0;right:0;z-index:3;color:#ff99a1;font-family:'Playfair Display',serif;font-style:italic;font-size:14px}
 .hunt-cover,.secret-spot{position:absolute;border:0;background:transparent;cursor:pointer}
 .hunt-cover{z-index:4;inset:0;width:100%;height:100%}
 .hunt-cover:focus-visible,.secret-spot:focus-visible{outline:3px solid #ff4d5a;outline-offset:-5px;border-radius:20px}
 .secret-spot{z-index:5;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:50%;display:none}
-.secret-spot::after{content:'✧';font-size:24px;color:#ff4d5a;text-shadow:0 0 12px #ff0015;opacity:0;transition:opacity .2s}
+.secret-spot::after{content:'✕';font-size:24px;color:#ff4d5a;text-shadow:0 0 12px #ff0015;opacity:0;transition:opacity .2s}
 .secret-spot:hover::after,.secret-spot:focus-visible::after{opacity:.85}
 .secret-spot.show{display:block;animation:twinkle 1.7s ease-in-out infinite}
 .secret-spot.found{display:block;animation:pop .35s ease-out}
@@ -339,10 +350,10 @@ footer span{color:#ff4d5a;margin:0 7px}
   <div id="entry-cover">
     <!-- Step 1: Bestie Question -->
     <div class="cover-card active" id="step-1">
-      <h2>Are You my bestie? 🤍</h2>
+      <h2>Are You my bestie? 💔</h2>
       <div class="cover-buttons">
-        <button class="cover-btn" onclick="nextStep(2)">Yes ⸜(｡˃ ᵕ ˂ )⸝♡</button>
-        <button class="cover-btn secondary" onclick="nextStep(2)">No but maybe in future 🍃</button>
+        <button class="cover-btn" onclick="nextStep(2)">Yes ⸜(｡˃ ᵕ ˂ )⸝💔</button>
+        <button class="cover-btn secondary" onclick="nextStep(2)">No but maybe in future 🥀</button>
       </div>
     </div>
 
@@ -360,31 +371,31 @@ footer span{color:#ff4d5a;margin:0 7px}
       <h2>Are you ready? ✨</h2>
       <div class="cover-buttons">
         <button class="cover-btn" onclick="finishCover()">Yes (｀・ω・´)</button>
-        <button class="cover-btn secondary" onclick="finishCover()">Yes please ⸜(｡˃ ᵕ ˂ )⸝♡</button>
+        <button class="cover-btn secondary" onclick="finishCover()">Yes please ⸜(｡˃ ᵕ ˂ )⸝💔</button>
       </div>
     </div>
   </div>
 
   <div class="page-shell">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Gift for Bestie Luna">♡ Gift for Bestie Luna</a>
-      <div class="counter" aria-live="polite"><span class="counter-bunny">🐇</span><span><strong id="visit-count">17</strong><small>little visits</small></span></div>
+      <a class="brand" href="#home" aria-label="Gift for Bestie Luna">💔 Gift for Bestie Luna</a>
+      <div class="counter" aria-live="polite"><span class="counter-bunny">☠️🐰</span><span><strong id="visit-count">17</strong><small>little visits</small></span></div>
     </header>
 
     <main id="home">
       <section class="hero" aria-labelledby="title">
         <div class="hero-copy">
-          <p class="eyebrow"><span>✿</span> a little anniversary gift <span>✿</span></p>
-          <h1 id="title">For my<br><em>favorite human,</em><br>Bestie Luna <span class="title-bunny">♡</span></h1>
-          <p class="intro">A tiny corner of the internet to celebrate our friendship, all the lovely little moments, and the person who made 2025 extra special.</p>
+          <p class="eyebrow"><span>✿</span> a little dark anniversary gift <span>✿</span></p>
+          <h1 id="title">For my<br><em>favorite human,</em><br>Bestie Luna <span class="title-bunny">💔</span></h1>
+          <p class="intro">A tiny dark corner of the internet to celebrate our friendship, all the lovely little moments, and the person who made 2025 extra special.</p>
           <a class="button" href="#surprise">Find your little surprise <span>↓</span></a>
-          <div class="signature">made with a whole lot of love <span>♡</span></div>
+          <div class="signature">made with a whole lot of dark love <span>💔</span></div>
         </div>
         <div class="hero-art" aria-label="Moonlit picture for Bestie Luna">
-          <div class="art-sticker sticker-one">☾</div><div class="art-sticker sticker-two">✿</div><div class="art-sticker sticker-three">♡</div>
+          <div class="art-sticker sticker-one">☾</div><div class="art-sticker sticker-two">✿</div><div class="art-sticker sticker-three">💔</div>
           <div class="iuno-frame">
             <img class="iuno-portrait" src="images.jpg" alt="Bestie Luna's Gift" loading="eager">
-            <span class="frame-moon">☾</span><span class="frame-bunny">🐇</span>
+            <span class="frame-moon">☾</span><span class="frame-bunny">☠️🐰</span>
           </div>
           <span class="art-caption">A special memory, for Bestie Luna</span>
         </div>
@@ -395,14 +406,21 @@ footer span{color:#ff4d5a;margin:0 7px}
       <section class="surprise-section" id="surprise" aria-labelledby="surprise-title">
         <p class="eyebrow">psst... there’s something hiding here</p>
         <h2 id="surprise-title">A little game for you</h2>
-        <p class="game-hint">Tap around the picture and see if you can find the secret ♡</p>
+        <p class="game-hint">Tap around the picture and see if you can find the secret 💔</p>
         <div class="hunt-card" id="hunt-card" aria-label="Interactive hidden surprise picture">
           <div class="hunt-sky"><span class="cloud cloud-a">☁</span><span class="cloud cloud-b">☁</span><span class="sun">☼</span>
             <div class="hill hill-back"></div><div class="hill hill-front"></div>
             <span class="flower f1">✿</span><span class="flower f2">✿</span><span class="flower f3">✿</span><span class="flower f4">✿</span>
-            <span class="spark s1">✧</span><span class="spark s2">♡</span><span class="spark s3">✦</span>
-            <div class="hunt-bunny"><span class="ear e1"></span><span class="ear e2"></span><span class="bunny-face"><i></i><i></i><b></b><u></u></span><span class="bunny-body"></span><span class="bunny-tail"></span></div>
-            <div class="search-hint">the secret is tucked somewhere in this garden...</div>
+            <span class="spark s1">✧</span><span class="spark s2">💔</span><span class="spark s3">✦</span>
+            <!-- Dead Bunny Representation -->
+            <div class="hunt-bunny">
+              <span class="ear e1"></span>
+              <span class="ear e2"></span>
+              <span class="bunny-face"><i></i><i></i><b></b><u></u></span>
+              <span class="bunny-body"></span>
+              <span class="bunny-tail"></span>
+            </div>
+            <div class="search-hint">the secret is tucked somewhere in this dark garden...</div>
             <button class="secret-spot" id="secret-spot" aria-label="Open the hidden surprise" title="A tiny secret" style="left: 25.6876%; top: 69.2017%;"></button>
             <button class="hunt-cover" id="hunt-cover" aria-label="Search this picture for a surprise"></button>
           </div>
@@ -412,12 +430,12 @@ footer span{color:#ff4d5a;margin:0 7px}
           <span class="frame-corner top-left">❀</span><span class="frame-corner top-right">❀</span>
           <span class="frame-label">a little something, from me to you</span>
           <p>Thanks for everything—you’re the best person I found in 2025. Take this! <span class="candy">🍬</span></p>
-          <p class="gift-line">*gives you a special candy* :D</p>
+          <p class="gift-line">*gives you a special dark candy* :D</p>
           <span class="frame-corner bottom-left">❀</span><span class="frame-corner bottom-right">❀</span>
         </div>
       </section>
     </main>
-    <footer>for Bestie Luna, always <span>♡</span> made with care &amp; a little bit of magic</footer>
+    <footer>for Bestie Luna, always <span>💔</span> made with care &amp; a little bit of dark magic</footer>
   </div>
   <script>
     function nextStep(stepNumber) {
@@ -437,7 +455,7 @@ footer span{color:#ff4d5a;margin:0 7px}
     localStorage.setItem(key, String(visits));
     counter.textContent = visits.toLocaleString();
   } catch {
-    counter.textContent = '♡';
+    counter.textContent = '💔';
   }
 
   const card = document.querySelector('#hunt-card');
@@ -469,7 +487,7 @@ footer span{color:#ff4d5a;margin:0 7px}
       spot.classList.add('found');
       spot.setAttribute('aria-label', 'Surprise found!');
       message.hidden = false;
-      hint.textContent = 'You found it! A little something, just for you ♡';
+      hint.textContent = 'You found it! A little something, just for you 💔';
       cover.disabled = true;
       message.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
@@ -485,7 +503,7 @@ footer span{color:#ff4d5a;margin:0 7px}
     revealed = true;
     spot.classList.add('found');
     message.hidden = false;
-    hint.textContent = 'You found it! A little something, just for you ♡';
+    hint.textContent = 'You found it! A little something, just for you 💔';
     cover.disabled = true;
     message.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
